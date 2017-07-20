@@ -1,6 +1,5 @@
-<%= @player_1_name %> vs. <%= @player_2_name %>
+<%= @game.player_1.name %>: <%= @game.player_1.hit_points %>HP  vs.  <%= @game.player_2.name %>: <%= @game.player_2.hit_points %>HP
 
-<%= @player_2_name %>: 60HP
 
 <form action="/attack">
   Attack Player!
