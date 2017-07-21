@@ -44,4 +44,20 @@ describe Game do
     end
   end
 
+  describe '#game_over?' do
+    it 'ends the game' do
+      allow(player_1).to receive(:hit_points) { 0 }
+      allow(player_2).to receive(:hit_points) { 10 }
+      expect(subject.game_over?).to eq true
+    end
+  end
+
+  describe '#loser' do
+    it 'displays name of the loser' do
+      allow(player_1).to receive(:hit_points) { 0 }
+      allow(player_2).to receive(:hit_points) { 10 }
+      expect(subject.loser).to eq player_1
+    end
+  end
+
 end

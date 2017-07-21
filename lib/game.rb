@@ -27,4 +27,13 @@ class Game
    @players.select { |player| player != the_player }.first
  end
 
+ def game_over?
+   player_1.hit_points == 0 || player_2.hit_points == 0
+ end
+
+ def loser
+   @players.select { |player| player.hit_points == 0 }.first
+
+ end
+
 end
