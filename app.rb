@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/player'
 require './lib/game'
+require './lib/attack'
 
 class Battle < Sinatra::Base
 
@@ -27,8 +28,12 @@ run! if app_file == $0
 
   get '/attack' do
     @game = $game
-    @game.attack(@game.player_2)
-    @game.switch_turns
+    Attack.run(@game.opponent_of(@game.current_turn))
     erb :attack
+  end
+
+  post '/switch-turns' do
+    $game.switch_turns
+    redirect '/play'
   end
 end

@@ -7,13 +7,13 @@ class Game
     @current_turn = player_1
   end
 
-  def attack(player)
-    player.receive_damage
-  end
+  # def attack(player)
+  #   player.receive_damage
+  # end
 
   def player_1
    @players.first
- end
+  end
 
  def player_2
    @players.last
@@ -22,8 +22,6 @@ class Game
  def switch_turns
    @current_turn = opponent_of(current_turn)
  end
-
- private
 
  def opponent_of(the_player)
    @players.select { |player| player != the_player }.first
