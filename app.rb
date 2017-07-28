@@ -10,7 +10,6 @@ run! if app_file == $0
   enable :sessions
 
   get '/' do
-    # 'Testing infrastructure working!' Not sure if we still need this??
     erb :index
   end
 

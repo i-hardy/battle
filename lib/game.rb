@@ -7,10 +7,6 @@ class Game
     @current_turn = player_1
   end
 
-  # def attack(player)
-  #   player.receive_damage
-  # end
-
   def self.create(player_1, player_2)
     @game = Game.new(player_1, player_2)
   end
